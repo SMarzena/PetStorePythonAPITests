@@ -22,7 +22,7 @@ def test_add_a_new_pet_verify_header():
     assert response.headers['Access-Control-Allow-Methods'] == 'GET, POST, DELETE, PUT'
 
 
-def test_finding_pet():
+def test_find_pet_verify_status_code():
     """
     Test: Find pet by ID
     method: GET
@@ -45,7 +45,7 @@ def test_compare_add_a_new_pet_and_finding_pet_verify_json():
     assert stored_pet_json[0] == pet_by_id_response.json()
 
 
-def test_finding_pet_by_status_status_code():
+def test_finding_pet_by_status_verify_status_code():
     """
     Test: Find pet by status, check status code
     method: GET
@@ -55,7 +55,7 @@ def test_finding_pet_by_status_status_code():
     assert response.status_code == HTTPStatus.OK
 
 
-def test_finding_pet_by_status_url():
+def test_finding_pet_by_verify_status_url():
     """
     Test: Find pet by status, check url contains 'findByStatus'
     method: GET
@@ -65,7 +65,7 @@ def test_finding_pet_by_status_url():
     assert '/findByStatus?status=' in response.url
 
 
-def test_update_a_pet_with_form_data_status_code():
+def test_update_a_pet_with_form_data_verify_status_code():
     """
     Test: Update a pet in the store with form data, check status code
     method: POST
@@ -75,7 +75,7 @@ def test_update_a_pet_with_form_data_status_code():
     assert response.status_code == HTTPStatus.OK
 
 
-def test_update_a_pet_with_form_data_check_message():
+def test_update_a_pet_with_form_data_verify_message():
     """
     Test: Update a pet in the store with form data, check if message is equal to pet id
     method: POST
@@ -86,7 +86,7 @@ def test_update_a_pet_with_form_data_check_message():
     assert updated_pet.json()["message"] == original_pet
 
 
-def test_update_an_existing_pet_status_code():
+def test_update_an_existing_pet_verify_status_code():
     """
     Test: Update an existing pet in the store, check status code
     method: PUT
@@ -96,7 +96,7 @@ def test_update_an_existing_pet_status_code():
     assert response.status_code == HTTPStatus.OK
 
 
-def test_update_an_existing_pet_compare_names():
+def test_update_an_existing_pet_verify__names():
     """
     Test: Update an existing pet in the store, check if name is changed
     method: PUT
@@ -107,7 +107,7 @@ def test_update_an_existing_pet_compare_names():
     assert updated_pet.json()["name"] != original_pet
 
 
-def test_delete_pet():
+def test_delete_pet_verify_status_code():
     """
     Test: Delete a pet, check status code
     method: DELETE
@@ -117,7 +117,7 @@ def test_delete_pet():
     assert deleted_pet.status_code == HTTPStatus.OK
 
 
-def test_delete_pet_compare_id():
+def test_delete_pet_verify_id():
     """
     Test: Delete a pet, check if message is equal to pet id
     method: DELETE

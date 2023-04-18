@@ -8,7 +8,7 @@ endpoint = 'https://petstore.swagger.io/v2/store/order'
 store_to_add = Order().create_order()
 
 
-def add_place_an_order_pet():
+def add_order_pet():
     added_place = requests.post(url=endpoint, json=store_to_add)
     print('added_place ', added_place)
     store_json = added_place.json()
