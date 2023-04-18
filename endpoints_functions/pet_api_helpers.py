@@ -1,9 +1,5 @@
 import random
-
-
-def generate_id():
-    generated_id = random.randint(1000000, 9999999)
-    return generated_id
+from general_helpers import generate_id
 
 
 def generate_category_name():
