@@ -22,8 +22,8 @@ def add_new_pet():
 
 def find_pet_by_id():
     pet_id = add_new_pet()[1]
-    founded_pet = requests.get(url=endpoint + '/' + pet_id)
-    return founded_pet
+    found_pet = requests.get(url=endpoint + '/' + pet_id)
+    return found_pet
 
 
 def find_pet_by_status():
