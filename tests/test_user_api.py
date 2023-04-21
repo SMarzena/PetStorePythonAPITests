@@ -26,7 +26,6 @@ def test_create_user_url():
     assert response.url == 'https://petstore.swagger.io/v2/user'
 
 
-#TODO Ask Maciej about this test - it's not working
 #TODO I added import pytest because of this @pytest.mark.skip
 @pytest.mark.skip
 def test_response_request_user_url():

@@ -1,6 +1,7 @@
 from http import HTTPStatus
 from endpoints_functions import store_endpoints
 from pathlib import Path
+import pytest
 
 
 def test_add_new_order_verify_status_code():
@@ -51,11 +52,14 @@ def test_add_new_order_to_temp_list_verify_json():
     assert stored_order_json[0] == order_by_id.json()
 
 
+@pytest.mark.skip
 def test_get_order_from_db_compare_json_with_expected_file():
     """
     Test: Get order already exists in DB
     method: GET
     endpoint: https://petstore.swagger.io/v2/store/order/{id}
+    !!Test is not stable because there is no access to pet store DB and order id is changing often.
+    !!This is a reason of skip test
     """
     get_response_json = str(store_endpoints.get_purchase_order_by_id(6).json())
     file_path = Path("../expected_files/get_order_id_6.json")
