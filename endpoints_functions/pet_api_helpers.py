@@ -1,5 +1,5 @@
 import random
-from general_helpers import generate_id
+from endpoints_functions.general_helpers import generate_id
 
 
 def generate_category_name():

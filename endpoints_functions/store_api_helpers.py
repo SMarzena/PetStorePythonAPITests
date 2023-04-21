@@ -1,7 +1,7 @@
+from endpoints_functions.general_helpers import generate_id
+
 import random
 import datetime
-
-from general_helpers import generate_id
 
 
 def generate_status_name():

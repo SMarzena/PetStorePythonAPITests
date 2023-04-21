@@ -2,6 +2,7 @@ from http import HTTPStatus
 from endpoints_functions import store_endpoints
 from pathlib import Path
 
+
 def test_add_new_order_verify_status_code():
     """
     Test: Add a new place an order for a pet, check status code
@@ -36,7 +37,7 @@ def test_add_new_order_verify_json_by_ge_endpoint():
     assert post_response == get_response.json()
 
 
-#Same test case but by Maciek's way
+# Same test case but by Maciek's way
 def test_add_new_order_to_temp_list_verify_json():
     """
     Test: Add new place an order for a pet to temp list - this endpoint is inside function get_order_by_id_as_maciek.
@@ -60,7 +61,7 @@ def test_get_order_from_db_compare_json_with_expected_file():
     file_path = Path("../expected_files/get_order_id_6.json")
     with open(file_path) as file:
         expected_output = file.read()
-#TODO: test passing this way but I can't format json file. It looks ugly. Maybe I should use methods from json library?
+    # TODO: test passing this way but I can't format json file. It looks ugly. Maybe I should use methods from json library?
     assert get_response_json == expected_output
 
 
@@ -78,10 +79,10 @@ def test_get_order_from_db_compare_json_with_expected_file():
 #         print('exp', type(expected_output))
 #         expected_output_dict = dict(expected_output)
 #         print('dict', type(expected_output_dict))
-#TODO inside with modify file to change string and available value because they ae random. Add 'skip' there
-        # print('expected_output_dict: ', type(expected_output_dict), expected_output_dict)
-        # expected_output['available'] = 'skipped'
-        # print('expected_output: ', expected_output)
+# TODO inside with modify file to change string and available value because they ae random. Add 'skip' there
+# print('expected_output_dict: ', type(expected_output_dict), expected_output_dict)
+# expected_output['available'] = 'skipped'
+# print('expected_output: ', expected_output)
 #    assert get_response_json == expected_output_440
 
 
@@ -96,7 +97,3 @@ def test_delete_order_verify_status_code():
     response_id = post_response['id']
     delete_response = store_endpoints.delete_order_by_id(response_id)
     assert delete_response.status_code == HTTPStatus.OK
-
-
-
-

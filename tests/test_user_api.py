@@ -3,6 +3,8 @@ from http import HTTPStatus
 import pytest
 
 
+#TODO these tests require full refactor as they are in store and pet scopes
+
 correct_credentials = {
     "username": 'Mtest',
     "password": 'mtest'
