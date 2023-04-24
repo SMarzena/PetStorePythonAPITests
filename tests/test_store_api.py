@@ -35,7 +35,7 @@ def test_add_new_order_verify_json_by_ge_endpoint():
     endpoint: https://petstore.swagger.io/v2/store/order/{id}
     """
     post_response = store_endpoints.add_order_pet()[2]
-    print("Hello Webhook")
+#    print("Hello Webhook")
     response_id = post_response['id']
     get_response = store_endpoints.get_purchase_order_by_id(response_id)
     assert post_response == get_response.json()
