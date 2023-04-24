@@ -10,7 +10,7 @@ def test_add_new_order_verify_status_code():
     method: POST
     endpoint: https://petstore.swagger.io/v2/store/order
     """
-    print("Hello Webhook")
+#    print("Hello Webhook")
     response = store_endpoints.add_order_pet()[0]
     assert response.status_code == HTTPStatus.OK
 
