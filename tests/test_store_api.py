@@ -22,7 +22,7 @@ def test_add_new_order_verify_header():
     endpoint: https://petstore.swagger.io/v2/store/order
     """
     response = store_endpoints.add_order_pet()[0]
-#    print("Hello Webhook")
+    print("Hello Webhook")
     assert response.headers['Access-Control-Allow-Methods'] == 'GET, POST, DELETE, PUT'
 
 
